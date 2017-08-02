@@ -1,0 +1,13 @@
+## Ignore idea files
+*.idea
+.idea/
+
+## Ignore vi swap files
+*.swp
+
+## Ignore useless folders
+.metadata/
+RemoteSystemsTempFiles/
+
+## Ignore .iml files
+*.iml

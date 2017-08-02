@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+
+    <title>Gameshop</title>
+
+    <!-- Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet">
+
+    <!-- CSS styles -->
+    <link href="assets/public/css/styles.min.css" rel="stylesheet">
+
+    <!-- Javascript scripts -->
+    <script src="assets/public/js/script.min.js"></script>
+</head>
+
+<body>
+
+<header class="compact">
+    <h2 class="menu">
+        <button id="logout-button" class="appButton">Logout</button>
+    </h2>
+    <h2 class="menu">
+        <button id="cart-button" class="appButton">Cart</button>
+    </h2>
+    <h1><a href="#">Video games online shop</a></h1>
+</header>
+
+<div class="main-content">
+    <div class="all-games page">
+        <div class="filters">
+            <div class="pagination">
+                <div class="filter-criteria">
+                    <span>Pages</span>
+                    <ul class="pageNumber">
+                        <li id="previousPage">&laquo;</li>
+                        <li id="currentPage">1</li>
+                        <li id="nextPage">&raquo;</li>
+                    </ul>
+                </div>
+                <div class="filter-criteria">
+                    <span>Games per page</span>
+                    <ul class="itemsPerPage">
+                        <li>5</li>
+                        <li class="active">10</li>
+                        <li>15</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="filter-criteria">
+                <span>Consoles</span>
+                <label><input type="checkbox" name="console" value="PS3">PS3</label>
+                <label><input type="checkbox" name="console" value="PS4">PS4</label>
+                <label><input type="checkbox" name="console" value="Wii">WII</label>
+            </div>
+
+            <div class="filter-criteria">
+                <span>Type</span>
+                <label><input type="checkbox" name="type" value="Adventure">Adventure</label>
+                <label><input type="checkbox" name="type" value="Family">Family</label>
+                <label><input type="checkbox" name="type" value="War">War</label>
+            </div>
+            
+            <div class="filter-criteria">
+                <span>Age</span>
+                <label><input type="checkbox" name="age" value=3>3</label>
+                <label><input type="checkbox" name="age" value=6>6</label>
+                <label><input type="checkbox" name="age" value=10>10</label>
+                <label><input type="checkbox" name="age" value=16>16</label>
+                <label><input type="checkbox" name="age" value=18>18</label>
+            </div>
+            <button class="appButton">Clear filters</button>
+        </div>
+        <div>
+            <ul class="games-list"></ul>
+            <script id="games-template" type="x-template">
+                <div class="game" data-index="{{id}}">
+                    <img class="game-photo" src={{image}}>
+                    <h2><a href="#">{{title}}</a></h2>
+                    <ul class="game-description">
+                        <li><span>PEGI: </span>+{{age}}</li>
+                        <li><span>Type: </span>{{type}}</li>
+                        <li><span>Console: </span>{{console}}</li>
+                        <li><span>Released: </span>{{release_date}}</li>
+                        <li>
+                            <span>Rate of our experts: </span>
+                            <div class="star-ratings-css">
+                                <div class="star-ratings-css-top" style="width: {{rate-percent}}%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                            </div>
+                        </li>
+                    </ul>
+                    <button class="buy">Buy Now!</button>
+                    <p class="game-price">{{price}}$</p>
+                </div>
+            </script>
+        </div>
+    </div>
+
+    <div class="single-game page">
+        <div class="overlay"></div>
+        <div class="preview-large">
+            <h3>Single game view</h3>
+            <img src=""/>
+            <p></p>
+            <span class="close">&times;</span>
+        </div>
+    </div>
+    
+    <div class="logout page">
+        <div class="overlay"></div>
+        <div class="preview-large">
+            <h3>Succesfully logged out</h3>
+            <p> Thanks for visiting our website, see you soon on gameshop.com :)</p>
+            <span class="close">&times;</span>
+        </div>
+    </div>
+
+    <div class="cart page">
+        <div class="overlay"></div>
+        <div class="preview-large">
+            <h3>Cart content</h3>
+            <ul class="cart-games-list"></ul>
+            <script id="cart-games-template" type="x-template">
+                <div class="cart-game-characteristics">
+                    <div class="cart-game-description">
+                        <ul class="cart-game-properties">
+                            <li><h2>{{game_title}}</h2></li>
+                            <li><span>Console: </span>{{console}}</li>
+                            <li><span>Entities: </span>{{entities}}</li>
+                            <li><span>Price: </span>{{price}}$</li>
+                        </ul>
+                    </div>
+                    <div class="cart-game-price">
+                        <button data-index="{{game_id}}">Remove</button>
+                    </div>
+                </div>
+            </script>
+            <button id="pay-button" class="appButton">Pay </button>
+            <span class="close">&times;</span>
+        </div>
+    </div>
+</div>
+
+<div class="login page">
+    <form enctype="multipart/form-data" method="post" name="login-form">
+        <div class="container-form">
+            <label><b>Username</b></label>
+            <input type="text" placeholder="Username" name="username" required>
+
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Password" name="password" required>
+
+            <input type="submit" value="Submit">
+        </div>
+        <div id="message-login"></div>
+    </form>
+</div>
+
+<div class="error page">
+    <h3>Sorry, something went wrong :(</h3>
+</div>
+
+
+</body>
+</html>

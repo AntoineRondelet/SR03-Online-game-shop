@@ -1,0 +1,1264 @@
+/*-----------------
+General styles
+------------------*/
+
+* {
+    margin:0;
+    padding:0;
+}
+
+body {
+    font: normal 16px Arial, Helvetica, sans-serif;
+}
+
+h1, h3 {
+    font: normal 24px 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
+/*-----------------
+The Header
+------------------*/
+
+header {
+    position: fixed;
+    top: 0;
+    left:0;
+    right:0;
+
+    height: 40px;
+    z-index: 100;
+
+    background-color: #282b2c;
+    padding: 20px 40px;
+    color: #fff;
+    box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.1);
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+header h2.menu {
+    float: right;
+    opacity:0.9;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+header h2.menu:hover {
+    opacity:1;
+}
+
+header h2.menu a {
+    font-size: 13px;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 12px 18px;
+    border-radius: 3px;
+    background-color: #5895DB;
+}
+
+@media (max-width: 500px) {
+
+    header {
+        padding: 20px 15px;
+    }
+
+    header h1 {
+        font-size: 24px;
+        margin: 0;
+    }
+
+}
+
+/*-----------------
+Main Content
+------------------*/
+
+.main-content {
+    box-sizing: border-box;
+    text-align: center;
+    margin: 125px auto 60px;
+    padding: 0 40px;
+}
+
+.main-content h3 {
+    font-size: 28px;
+    color:  #5a96b9;
+    padding-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+
+    .main-content{
+        margin: 45px auto;
+        padding: 0 25px;
+    }
+
+}
+
+.page-title {
+    margin-left: 225px;
+    margin-bottom: 50px;
+}
+
+/*--------------------
+All games Page
+---------------------*/
+
+.all-games h3{
+    opacity: 0;
+}
+
+.all-games.visible .games-list,
+.all-games.visible .filters,
+.all-games.visible h3{
+    opacity: 1;
+    transition: 1s;
+    pointer-events: auto;
+}
+
+/*--------------------
+The Filters
+---------------------*/
+
+.filters {
+    box-sizing: border-box;
+    padding: 5px 30px 30px;
+    width: 190px;
+    background-color: #FFF;
+    border: 1px solid #DBE3E7;
+    border-radius: 3px;
+    box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.08);
+    position: fixed;
+    text-align: left;
+    color: #2B2E31;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.filters .filter-criteria {
+    display: block;
+    margin: 10px 0 10px;
+}
+
+.filters span {
+    font-size:14px;
+    display: block;
+    margin-bottom: 12px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.filters label {
+    display: block;
+    line-height: 1.4;
+    font-size: 15px;
+}
+
+.filters label input {
+    margin-right: 10px;
+}
+
+@media (max-width: 800px) {
+
+    .filters {
+        display: none;
+    }
+
+}
+
+/*----------------------
+The Buttons of the app
+------------------------*/
+
+.appButton{
+    border-radius: 2px;
+    background-color:  #4BC34B;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
+    border: 0;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+
+    width: 95px;
+    height: 32px;
+    margin-top: 10px;
+}
+
+/*----------------------
+The games list
+------------------------*/
+
+.games-list {
+    list-style:none;
+    margin-left:225px;
+    max-width: 1000px;
+    text-align: center;
+    padding: 0;
+    opacity: 0;
+    font-size: 0;
+}
+
+.games-list > li {
+    box-sizing:border-box;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+
+    width: 40%;
+    text-align:left;
+    font:normal 12px sans-serif;
+
+    background-color:#ffffff;
+    border:1px solid #dbe3e7;
+    border-radius: 3px;
+    box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.08);
+
+    margin: 0 12px 14px 0;
+    padding: 25px;
+}
+
+.games-list > li.hidden {
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.games-list h2 {
+    display: block;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    max-width: 500px;
+    margin:0;
+}
+
+.games-list h2 a {
+    text-decoration: none;
+    color: #2B2E31;
+}
+
+/*----------------------
+The game description
+------------------------*/
+
+.games-list .game-description{
+    /* CSS 3 */
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+
+    margin-top: 20px;
+
+    color: #5d5d5d;
+    font-size: 14px;
+    line-height: 1.45;
+    white-space: normal;
+
+    max-width: 90%;
+    margin-bottom: 20px;
+
+    list-style: none;
+}
+
+.games-list .game-description li{
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.games-list .game-description li:first-child{
+    display: block;
+}
+
+.games-list .game-description li span{
+    font-weight: bold;
+}
+
+/*----------------------
+The game photo
+------------------------*/
+
+.games-list .game-photo{
+    display: block;
+    margin: auto;
+
+    text-align: center;
+    box-shadow : 0 0 20px 8px #f3f3f3 inset;
+
+    width: 50%;
+    margin-bottom: 25px;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+/*---------------------------
+Rating of the games
+---------------------------*/
+
+.star-ratings-css {
+    unicode-bidi: bidi-override;
+    color: #c5c5c5;
+    font-size: 100%;
+    height: 30%;
+    width: 60%;
+    margin: 0 auto;
+    position: relative;
+    padding: 0;
+    text-shadow: 0px 1px 0 #a2a2a2;
+}
+
+.star-ratings-css-top {
+    color: #e7711b;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.star-rating-css-bottom {
+    padding: 0;
+    display: block;
+    z-index: 0;
+}
+
+@media (max-width: 500px) {
+
+    .star-rating-css {
+        width: 50px;
+        height: 15px;
+    }
+
+}
+
+/*-------------------------
+Games' buy button
+-------------------------*/
+
+.games-list button{
+    border-radius: 2px;
+    background-color:  #87bae1;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
+    border: 0;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+
+    width: 95px;
+    height: 32px;
+    }
+
+    /*-------------------------
+    Games' price
+    -------------------------*/
+
+.games-list .game-price{
+    float: right;
+
+    color:  #4e4e4e;
+    font-weight: bold;
+    font-size: 20px;
+
+    padding-top: 6px;
+    margin: 0;
+}
+
+/*-----------------------------------
+Responsiveness of the games list
+------------------------------------*/
+
+@media (max-width: 500px){
+
+    .games-list {
+        margin-left:0px;
+    }
+
+    .games-list .game-photo{
+        width: 225px;
+    }
+
+    .games-list .game-description{
+        max-width: 225px;
+    }
+}
+
+
+/*---------------------------
+Single Game Page
+----------------------------*/
+
+.single-game {
+    z-index: 100;
+}
+
+.single-game.visible .overlay{
+    height: 100%;
+}
+
+.single-game.visible .preview-large{
+    opacity: 1;
+    transition: 1.4s;
+    pointer-events: auto;
+}
+
+/*---------------------------
+Individual pages style
+----------------------------*/
+
+.overlay {
+    height: 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #282b2c;
+    transition: 0.6s;
+    z-index: 100;
+}
+
+.preview-large{
+    box-sizing: border-box;
+    width: 760px;
+    height: 550px;
+    position: fixed;
+    left: 50%;
+    margin-left: -375px;
+    top: 50%;
+    margin-top: -275px;
+    pointer-events: none;
+
+    border-radius: 6px;
+    background-color:  #ffffff;
+
+    z-index: 102;
+    opacity: 0;
+    transition: 0.4s;
+
+}
+
+.preview-large h3 {
+    margin-top: 20px;
+    color: black;
+}
+
+.preview-large img {
+    width: 100%;
+    height: 280px;
+    border-bottom: 3px solid #efefef;
+    border-radius: 5px 5px 0 0;
+}
+
+.preview-large p {
+    line-height: 23px;
+    padding: 50px 45px;
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 15px;
+
+    font-size: 28px;
+    color: #555;
+    cursor: pointer;
+}
+
+
+/*------------------
+Error Page
+-------------------*/
+
+.error {
+    opacity: 0;
+    transition: 0.6s;
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 100px;
+    width: 100%;
+}
+
+.error.visible {
+    opacity: 1;
+}
+
+.error h3 {
+    font-size: 40px;
+}
+
+/*-----------------
+Login Page
+------------------*/
+
+.login {
+    opacity: 0;
+    transition: 0.6s;
+    position: fixed;
+    margin: auto;
+}
+
+.login.visible {
+    opacity: 1;
+}
+
+.login h3 {
+    font-size: 40px;
+}
+
+/*-----------------
+Cart Page
+------------------*/
+
+.cart {
+    z-index: 100;
+}
+
+.cart h3 {
+    font-size: 40px;
+}
+
+.cart.visible .preview-large {
+    opacity: 1;
+    transition: 1.4s;
+    pointer-events: auto;
+}
+
+.cart.visible .overlay {
+    height: 100%;
+}
+
+.cart.visible .cart-games-list {
+    opacity: 1;
+    transition: 1s;
+    pointer-events: auto;
+}
+
+.cart-games-list {
+    width: 100%;
+    height: 380px;
+    border-bottom: 3px solid #efefef;
+    border-radius: 5px 5px 0 0;
+    overflow-y: auto;
+    list-style:none;
+    margin:auto;
+    max-width: 600px;
+    max-height: 450px;
+    text-align: center;
+    padding: 0;
+    opacity: 0;
+    font-size: 0;
+}
+
+.cart-games-list > li{
+    box-sizing: border-box;
+    display: inline-block;
+    cursor: pointer;
+    /*position: relative;*/
+    transition: 0.2s;
+    height: 70px;
+
+    width: 90%;
+    text-align:left;
+    font:normal 12px sans-serif;
+
+    background-color:#ffffff;
+    border:1px solid #dbe3e7;
+    border-radius: 3px;
+    box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.08);
+
+    margin: 0 12px 14px 0;
+}
+
+.cart-game-characteristics {
+    width: 100%;
+    height: 100%;
+}
+
+.cart-game-description {
+    width: 69%;
+    height: 100%;
+    float: left;
+    padding-left: 2px;
+}
+
+.cart-game-properties {
+    height: 100%;
+    list-style: none;
+    text-align: left;
+    padding: 4px;
+}
+
+.cart-game-price {
+    width: 30%;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    float: right;
+    border:1px solid #dbe3e7;
+    border-radius: 3px;
+    background-color: red;
+}
+
+.cart-game-price > button {
+    width: 100%;
+    height: 100%;
+}
+
+/*-----------------
+Logout Page
+------------------*/
+
+.logout {
+    z-index: 100;
+}
+
+.logout h3 {
+    font-size: 40px;
+}
+
+.logout.visible .preview-large {
+    opacity: 1;
+    transition: 1.4s;
+    pointer-events: auto;
+}
+
+.logout.visible .overlay {
+    height: 100%;
+}
+
+/*-----------------
+Pagination
+------------------*/
+
+.pageNumber {
+    width: 100%;
+}
+
+.pageNumber > li {
+    box-sizing:border-box;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+
+    width: 30%;
+    text-align:center;
+    font:normal 12px sans-serif;
+
+    background-color:#ffffff;
+    border:1px solid #dbe3e7;
+    border-radius: 3px;
+    box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.08);
+
+    padding: 3px;
+}
+
+.itemsPerPage li {
+    box-sizing:border-box;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+
+    width: 30%;
+    text-align:center;
+    font:normal 12px sans-serif;
+
+    background-color:#ffffff;
+    border:1px solid #dbe3e7;
+    border-radius: 3px;
+    box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.08);
+
+    padding: 3px;
+}
+
+/*--------------------------------
+  Media query for responsivity
+--------------------------------*/
+
+@media screen and (max-width: 800px) {
+    
+    * {
+        margin:0;
+        padding:0;
+    }
+    
+    body {
+        font: normal 16px Arial, Helvetica, sans-serif;
+    }
+    
+    h1, h3 {
+        font: normal 24px 'Open Sans', Arial, Helvetica, sans-serif;
+    }
+
+    
+    header {
+        position: fixed;
+        top: 0;
+        left:0;
+        right:0;
+    
+        height: 40px;
+        z-index: 100;
+    
+        background-color: #282b2c;
+        padding: 20px 40px;
+        color: #fff;
+        box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.1);
+    }
+    
+    header a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+    
+    header h2.menu {
+        float: right;
+        opacity:0.9;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    
+    header h2.menu:hover {
+        opacity:1;
+    }
+    
+    header h2.menu a {
+        font-size: 13px;
+        text-transform: uppercase;
+        display: inline-block;
+        padding: 12px 18px;
+        border-radius: 3px;
+        background-color: #5895DB;
+    }
+    
+    
+    
+    .main-content {
+        box-sizing: border-box;
+        text-align: center;
+        margin: 125px auto 60px;
+        padding: 0 40px;
+    }
+    
+    .main-content h3 {
+        font-size: 28px;
+        color:  #5a96b9;
+        padding-bottom: 20px;
+    }
+    
+    
+    .page-title {
+        margin-left: 225px;
+        margin-bottom: 50px;
+    }
+    
+    
+    .all-games h3{
+        opacity: 0;
+    }
+    
+    .all-games.visible .games-list,
+    .all-games.visible .filters,
+    .all-games.visible h3{
+        opacity: 1;
+        transition: 1s;
+        pointer-events: auto;
+    }
+    
+    
+    .filters {
+        box-sizing: border-box;
+        padding: 5px 30px 30px;
+        width: 190px;
+        background-color: #FFF;
+        border: 1px solid #DBE3E7;
+        border-radius: 3px;
+        box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.08);
+        position: fixed;
+        text-align: left;
+        color: #2B2E31;
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    .filters .filter-criteria {
+        display: block;
+        margin: 10px 0 10px;
+    }
+    
+    .filters span {
+        font-size:14px;
+        display: block;
+        margin-bottom: 12px;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+    
+    .filters label {
+        display: block;
+        line-height: 1.4;
+        font-size: 15px;
+    }
+    
+    .filters label input {
+        margin-right: 10px;
+    }
+    
+    
+    .appButton{
+        border-radius: 2px;
+        background-color:  #4BC34B;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
+        border: 0;
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 13px;
+        cursor: pointer;
+    
+        width: 95px;
+        height: 32px;
+        margin-top: 10px;
+    }
+    
+    
+    .games-list {
+        list-style:none;
+        margin-left:0px;
+        max-width: 1000px;
+        text-align: center;
+        padding: 0;
+        opacity: 0;
+        font-size: 0;
+    }
+    
+    .games-list > li {
+        box-sizing:border-box;
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        transition: 0.2s;
+    
+        width: 40%;
+        text-align:left;
+        font:normal 12px sans-serif;
+    
+        background-color:#ffffff;
+        border:1px solid #dbe3e7;
+        border-radius: 3px;
+        box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.08);
+    
+        margin: 0 12px 14px 0;
+        padding: 25px;
+    }
+    
+    .games-list > li.hidden {
+        opacity: 0.2;
+        pointer-events: none;
+    }
+    
+    .games-list h2 {
+        display: block;
+        font-size: 18px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        max-width: 500px;
+        margin:0;
+    }
+    
+    .games-list h2 a {
+        text-decoration: none;
+        color: #2B2E31;
+    }
+    
+    
+    .games-list .game-description{
+        columns: 2;
+        -webkit-columns: 2;
+        -moz-columns: 2;
+    
+        margin-top: 20px;
+    
+        color: #5d5d5d;
+        font-size: 14px;
+        line-height: 1.45;
+        white-space: normal;
+    
+        max-width: 90%;
+        margin-bottom: 20px;
+    
+        list-style: none;
+    }
+    
+    .games-list .game-description li{
+        display: inline-block;
+        margin-right: 5px;
+    }
+    
+    .games-list .game-description li:first-child{
+        display: block;
+    }
+    
+    .games-list .game-description li span{
+        font-weight: bold;
+    }
+    
+    
+    .games-list .game-photo{
+        display: block;
+        margin: auto;
+    
+        text-align: center;
+        box-shadow : 0 0 20px 8px #f3f3f3 inset;
+    
+        width: 50%;
+        margin-bottom: 25px;
+        padding: 20px 0;
+        box-sizing: border-box;
+    }
+    
+
+    .star-ratings-css {
+        unicode-bidi: bidi-override;
+        color: #c5c5c5;
+        font-size: 100%;
+        height: 30%;
+        width: 60%;
+        margin: 0 auto;
+        position: relative;
+        padding: 0;
+        text-shadow: 0px 1px 0 #a2a2a2;
+    }
+
+    .star-ratings-css-top {
+        color: #e7711b;
+        padding: 0;
+        position: absolute;
+        z-index: 1;
+        display: block;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+    }
+
+    .star-rating-css-bottom {
+        padding: 0;
+        display: block;
+        z-index: 0;
+    }
+    
+    .games-list button{
+        border-radius: 2px;
+        background-color:  #87bae1;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
+        border: 0;
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 13px;
+        cursor: pointer;
+    
+        width: 95px;
+        height: 32px;
+    }
+    
+    
+    .games-list .game-price{
+        float: right;
+    
+        color:  #4e4e4e;
+        font-weight: bold;
+        font-size: 20px;
+    
+        padding-top: 6px;
+        margin: 0;
+    }
+    
+    .games-list .highlight{
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background-color: rgba(0,0,0,0.1);
+        opacity: 0;
+        transition: 0.4s;
+    }
+    
+    .games-list > li:hover .highlight{
+        opacity: 1;
+    }
+    
+    
+    .single-game {
+        z-index: 100;
+    }
+    
+    .single-game.visible .overlay{
+        height: 100%;
+    }
+    
+    .single-game.visible .preview-large{
+        opacity: 1;
+        transition: 1.4s;
+        pointer-events: auto;
+    }
+
+    
+    .overlay {
+        height: 20px;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #282b2c;
+        transition: 0.6s;
+        z-index: 100;
+    }
+    
+    .preview-large{
+        box-sizing: border-box;
+        width: 760px;
+        height: 550px;
+        position: fixed;
+        left: 50%;
+        margin-left: -375px;
+        top: 50%;
+        margin-top: -275px;
+        pointer-events: none;
+    
+        border-radius: 6px;
+        background-color:  #ffffff;
+    
+        z-index: 102;
+        opacity: 0;
+        transition: 0.4s;
+    
+    }
+    
+    .preview-large h3 {
+        margin-top: 20px;
+        color: black;
+    }
+    
+    .preview-large img {
+        width: 100%;
+        height: 280px;
+        border-bottom: 3px solid #efefef;
+        border-radius: 5px 5px 0 0;
+    }
+    
+    .preview-large p {
+        line-height: 23px;
+        padding: 50px 45px;
+    }
+    
+    .close {
+        position: absolute;
+        right: 25px;
+        top: 15px;
+    
+        font-size: 28px;
+        color: #555;
+        cursor: pointer;
+    }
+    
+    
+    .error {
+        opacity: 0;
+        transition: 0.6s;
+        pointer-events: none;
+        position: absolute;
+        left: 0;
+        top: 100px;
+        width: 100%;
+    }
+    
+    .error.visible {
+        opacity: 1;
+    }
+    
+    .error h3 {
+        font-size: 40px;
+    }
+    
+    
+    .login {
+        opacity: 0;
+        transition: 0.6s;
+        position: fixed;
+        margin: auto;
+    }
+    
+    .login.visible {
+        opacity: 1;
+    }
+    
+    .login h3 {
+        font-size: 40px;
+    }
+    
+    
+    .cart {
+        z-index: 100;
+    }
+    
+    .cart h3 {
+        font-size: 40px;
+    }
+    
+    .cart.visible .preview-large {
+        opacity: 1;
+        transition: 1.4s;
+        pointer-events: auto;
+    }
+    
+    .cart.visible .overlay {
+        height: 100%;
+    }
+    
+    .cart.visible .cart-games-list {
+        opacity: 1;
+        transition: 1s;
+        pointer-events: auto;
+    }
+    
+    .cart-games-list {
+        width: 100%;
+        height: 380px;
+        border-bottom: 3px solid #efefef;
+        border-radius: 5px 5px 0 0;
+        overflow-y: auto;
+        list-style:none;
+        margin:auto;
+        max-width: 600px;
+        max-height: 450px;
+        text-align: center;
+        padding: 0;
+        opacity: 0;
+        font-size: 0;
+    }
+    
+    .cart-games-list > li{
+        box-sizing: border-box;
+        display: inline-block;
+        cursor: pointer;
+        transition: 0.2s;
+        height: 70px;
+    
+        width: 90%;
+        text-align:left;
+        font:normal 12px sans-serif;
+    
+        background-color:#ffffff;
+        border:1px solid #dbe3e7;
+        border-radius: 3px;
+        box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.08);
+    
+        margin: 0 12px 14px 0;
+    }
+    
+    .cart-game-characteristics {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .cart-game-description {
+        width: 69%;
+        height: 100%;
+        float: left;
+        padding-left: 2px;
+    }
+    
+    .cart-game-properties {
+        height: 100%;
+        list-style: none;
+        text-align: left;
+        padding: 4px;
+    }
+    
+    .cart-game-price {
+        width: 30%;
+        height: 100%;
+        text-align: center;
+        vertical-align: middle;
+        float: right;
+        border:1px solid #dbe3e7;
+        border-radius: 3px;
+        background-color: red;
+    }
+    
+    .cart-game-price > button {
+        width: 100%;
+        height: 100%;
+    }
+    
+    
+    .logout {
+        z-index: 100;
+    }
+    
+    .logout h3 {
+        font-size: 40px;
+    }
+    
+    .logout.visible .preview-large {
+        opacity: 1;
+        transition: 1.4s;
+        pointer-events: auto;
+    }
+    
+    .logout.visible .overlay {
+        height: 100%;
+    }
+    
+    
+    .pageNumber {
+        width: 100%;
+    }
+    
+    .pageNumber > li {
+        box-sizing:border-box;
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        transition: 0.2s;
+    
+        width: 30%;
+        text-align:center;
+        font:normal 12px sans-serif;
+    
+        background-color:#ffffff;
+        border:1px solid #dbe3e7;
+        border-radius: 3px;
+        box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.08);
+    
+        padding: 3px;
+    }
+    
+    .itemsPerPage li {
+        box-sizing:border-box;
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        transition: 0.2s;
+    
+        width: 30%;
+        text-align:center;
+        font:normal 12px sans-serif;
+    
+        background-color:#ffffff;
+        border:1px solid #dbe3e7;
+        border-radius: 3px;
+        box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.08);
+    
+        padding: 3px;
+    }
+}

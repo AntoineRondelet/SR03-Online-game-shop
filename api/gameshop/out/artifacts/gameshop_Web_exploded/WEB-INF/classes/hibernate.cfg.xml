@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:postgresql://localhost:5432/sr03</property>
+    <property name="connection.driver_class">org.postgresql.Driver</property>
+      <mapping class="com.gameshop.model.Characterize"/>
+      <mapping class="com.gameshop.model.ContentPurchase"/>
+      <mapping class="com.gameshop.model.Customer"/>
+      <mapping class="com.gameshop.model.Game"/>
+      <mapping class="com.gameshop.model.GameConsole"/>
+      <mapping class="com.gameshop.model.GameEntity"/>
+      <mapping class="com.gameshop.model.GameKeyword"/>
+      <mapping class="com.gameshop.model.GameSupport"/>
+      <mapping class="com.gameshop.model.GameType"/>
+      <mapping class="com.gameshop.model.Payment"/>
+      <mapping class="com.gameshop.model.PaymentMode"/>
+      <mapping class="com.gameshop.model.PaymentStatus"/>
+      <mapping class="com.gameshop.model.Purchase"/>
+      <mapping class="com.gameshop.model.Support"/>
+      <!-- <property name="connection.username"/> -->
+    <!-- <property name="connection.password"/> -->
+
+    <!-- DB schema will be updated if needed -->
+    <!-- <property name="hbm2ddl.auto">update</property> -->
+  </session-factory>
+</hibernate-configuration>
